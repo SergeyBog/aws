@@ -41,7 +41,7 @@ resource "aws_security_group" "serg_sg" {
 }
 
 
-resource "aws_instance" "serg_lab_2" {
+resource "aws_instance" "test" {
   ami           = "ami-053b0d53c279acc90"
   instance_type = "t2.micro"
 
@@ -49,7 +49,7 @@ resource "aws_instance" "serg_lab_2" {
 
   key_name = "aws_key"
   tags = {
-    Name = "serg_lab_2"
+    Name = "testKey"
   }
   user_data = <<-EOF
   #!/bin/bash
