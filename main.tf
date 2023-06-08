@@ -16,7 +16,7 @@ terraform {
   }
 }
 resource "aws_security_group" "serg_sg" {
-  name        = "OV_security"
+  name        = "serg_security"
   description = "Security group for the example application"
 
   ingress {
@@ -47,9 +47,9 @@ resource "aws_instance" "test" {
 
   vpc_security_group_ids = [aws_security_group.serg_sg.id]
 
-  key_name = "aws_key"
+  key_name = "testKey"
   tags = {
-    Name = "testKey"
+    Name = "test"
   }
   user_data = <<-EOF
   #!/bin/bash
